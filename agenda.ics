@@ -122,14 +122,16 @@ END:VEVENT
 BEGIN:VEVENT
 UID:arbre-de-noel-2026@apsal-lyon.github.io
 DTSTAMP:20261118T090000Z
-DTSTART;TZID=Europe/Paris:20261212T131500
+DTSTART;TZID=Europe/Paris:20261212T130000
 SUMMARY:Arbre de Noël de l'APSAL
-LOCATION:Rectorat de Lyon\, 92 rue de Marseille
-DESCRIPTION:Accueil à partir de 13 h 15 : spectacle « Le Noël magique 
- de la famille Cracottins »\, arrivée du Père Noël\, remise des cadea
- ux et goûter.
+LOCATION:Rectorat de Lyon\, rez-de-chaussée\, 92 rue de Marseille\, Lyon
+  7e
+DESCRIPTION:Accueil des familles entre 13 h et 13 h 15 précises\, entré
+ e principale. 13 h 15 : chants et comptines \; 14 h : spectacle « Le No
+ ël magique de la famille Cracottin » \; puis arrivée du Père Noël\,
+  cadeaux\, maquillage et goûter.
 CATEGORIES:noel
-URL:https://apsal-lyon.github.io/actus/arbre-de-noel-2026/
+URL:https://apsal-lyon.github.io/actus/arbre-de-noel-programme/
 END:VEVENT
 BEGIN:VEVENT
 UID:marche-noel-talents-2026@apsal-lyon.github.io

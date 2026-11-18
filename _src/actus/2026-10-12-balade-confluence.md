@@ -2,7 +2,9 @@
 titre: "Balade urbaine : le Musée des Confluences et le quartier de La Confluence"
 date: 2026-10-12
 fin: 2026-11-07
-motif: balade
+image: https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Lyon_-_Mus%C3%A9e_des_Confluences_%2849525806051%29.jpg/1280px-Lyon_-_Mus%C3%A9e_des_Confluences_%2849525806051%29.jpg
+image_alt: "Le Musée des Confluences, sa structure de verre et d'acier à la pointe de la presqu'île."
+credit: confluences
 resume: "Promenade guidée le samedi 7 novembre, entre architecture contemporaine et renouveau urbain lyonnais."
 infos:
   Quand: Samedi 7 novembre 2026, 9 h 30 (environ 2 heures)

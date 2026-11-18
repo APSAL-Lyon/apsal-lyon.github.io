@@ -57,6 +57,7 @@ ICONES = {
     "sapin": '<path d="M24 5l10 13h-6l9 11h-7l8 10H10l8-10h-7l9-11h-6z"/><path d="M24 39v5"/>',
     "verres": '<path d="M12 6h10l-1 12a4 4 0 0 1-8 0zM17 22v14M12 36h10"/><path d="M28 10h10l-1 12a4 4 0 0 1-8 0zM33 26v12M28 38h10"/>',
     "etoile": '<path d="M24 6l5 11 12 1-9 8 3 12-11-7-11 7 3-12-9-8 12-1z"/>',
+    "panier": '<path d="M6 20h36l-4 20H10z"/><path d="M14 20l6-12M34 20l-6-12"/><path d="M18 27v7M24 27v7M30 27v7"/>',
     "main": '<path d="M14 26V14a3 3 0 0 1 6 0v8M20 20v-9a3 3 0 0 1 6 0v9M26 20v-7a3 3 0 0 1 6 0v11M32 22a3 3 0 0 1 6 0v6c0 8-6 14-13 14-6 0-9-3-12-8l-5-8a3 3 0 0 1 5-3l2 3"/>',
 }
 
@@ -73,6 +74,7 @@ MOTIFS = {  # fond, couleur des côtes, icône, couleur de l'icône
     "danse": ("#17324D", "#24496D", "notes", "#F5C61E"),
     "noel": ("#135C90", "#1E7FC2", "sapin", "#F5C61E"),
     "rentree": ("#F5C61E", "#F8D454", "verres", "#17324D"),
+    "panier": ("#2E7D4F", "#3E9462", "panier", "#F5C61E"),
 }
 
 
@@ -92,6 +94,9 @@ def couverture(motif):
 
 # ---------- Contenus ----------
 
+PHOTOS = yaml.safe_load((SRC / "photos.yaml").read_text(encoding="utf-8"))
+
+
 def lire_actus():
     actus = []
     for f in sorted((SRC / "actus").glob("*.md"), reverse=True):
@@ -104,6 +109,7 @@ def lire_actus():
         meta["html"] = markdown.markdown(corps.strip(), extensions=["sane_lists"])
         meta["fin_iso"] = meta["fin"].isoformat() if meta.get("fin") else ""
         meta["couverture"] = couverture(meta["motif"]) if meta.get("motif") else ""
+        meta["photo"] = PHOTOS.get(meta.get("credit")) if meta.get("credit") else None
         actus.append(meta)
     return actus
 
@@ -111,15 +117,16 @@ def lire_actus():
 def main():
     env = jinja2.Environment(loader=jinja2.FileSystemLoader(SRC / "gabarits"), autoescape=True,
                              trim_blocks=True, lstrip_blocks=True)
-    env.globals.update(site=SITE, tally_id=TALLY_ID, icone=icone, annee=dt.date.today().year)
+    env.globals.update(site=SITE, tally_id=TALLY_ID, icone=icone, annee=dt.date.today().year, photos=PHOTOS)
     actus = lire_actus()
 
     pages = {
-        "index.html": ("accueil.html", dict(actus=actus[:3], eventail=eventail())),
+        "index.html": ("accueil.html", dict(actus=actus[:3], bandeau=actus[:6], eventail=eventail())),
         "actus/index.html": ("actus.html", dict(actus=actus)),
         "agenda/index.html": ("agenda.html", {}),
         "association/index.html": ("association.html", {}),
         "adherer/index.html": ("adherer.html", {}),
+        "espacecse/index.html": ("espacecse.html", {}),
         "mentions-legales/index.html": ("mentions.html", {}),
         "404.html": ("404.html", {}),
     }

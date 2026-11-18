@@ -37,7 +37,7 @@
     <div>
       <h2>Ce que vous apporte l'adhésion</h2>
       <ul>
-        <li>la plateforme <strong>EspaceCSE</strong> : billetterie à tarifs préférentiels (cinéma, spectacles, concerts, théâtre, opéra, cirque, festivals, parcs de loisirs, voyages et séjours), avec la participation de l'APSAL déduite à l'achat ;</li>
+        <li>la plateforme <a href="/espacecse/"><strong>EspaceCSE</strong></a> : billetterie à tarifs préférentiels (cinéma, spectacles, concerts, théâtre, opéra, cirque, festivals, parcs de loisirs, voyages et séjours), avec la participation de l'APSAL déduite à l'achat ;</li>
         <li>des <strong>billets de cinéma UGC à 6,50 €</strong>, disponibles en version papier auprès des membres du bureau ;</li>
         <li>les <strong>commandes groupées</strong> à tarifs négociés (chocolats, biscuits Bijou, parfums…) ;</li>
         <li>l'accès gratuit aux <strong>balades urbaines</strong>, visites et ateliers organisés par les bénévoles ;</li>
@@ -47,15 +47,6 @@
       <p>Après votre adhésion, vous recevez un identifiant et un mot de passe pour accéder à EspaceCSE.</p>
       <p><a class="bouton bouton-soleil" href="/adherer/">Adhérer en ligne</a></p>
 
-      <h2 style="margin-top:2.5rem">Les balades urbaines de la saison</h2>
-      <p>Des visites culturelles et historiques le samedi matin, organisées par les bénévoles :</p>
-      <ul>
-        <li>la Maison des Canuts ;</li>
-        <li>le Musée des Confluences et son architecture remarquable ;</li>
-        <li>le quartier des Brotteaux, jusqu'aux bâtiments « Crayon et Gomme » de la Part-Dieu ;</li>
-        <li>le quartier des Chartreux, l'église Saint-Bruno et sa crèche (en décembre), avec une redescente par les traboules.</li>
-      </ul>
-      <p>D'autres propositions viendront compléter le programme au fil de l'année.</p>
     </div>
     <aside>
       <div class="hebdo" id="benevole">
@@ -69,6 +60,21 @@
         <p style="margin:0">Un distributeur en panne ? Appelez le numéro indiqué sur la machine, ou signalez-le à <a href="mailto:apsal@ac-lyon.fr">apsal@ac-lyon.fr</a>.</p>
       </div>
     </aside>
+  </div>
+</section>
+<section class="section section-blanche" id="balades">
+  <div class="cadre">
+    <h2>Les balades urbaines de la saison</h2>
+    <p style="max-width:var(--mesure)">Des visites culturelles et historiques le samedi matin, organisées par les bénévoles. Gratuites pour les adhérents. D'autres propositions viendront compléter le programme au fil de l'année.</p>
+    <div class="galerie">
+      {% for cle, legende in [("canuts", "La Maison des Canuts"), ("confluences", "Le Musée des Confluences et son architecture remarquable"), ("brotteaux", "Le quartier des Brotteaux…"), ("part-dieu", "…jusqu'au « Crayon » et à la « Gomme » de la Part-Dieu"), ("chartreux", "Les Chartreux, l'église Saint-Bruno et sa crèche, en décembre, puis la descente par les traboules")] %}
+      {% set ph = photos[cle] %}
+      <figure>
+        <img src="{{ ph.url }}" alt="{{ ph.titre }}" loading="lazy">
+        <figcaption><strong>{{ legende }}</strong><small>Photo : {{ ph.auteur }}, <a href="{{ ph.licence_url }}">{{ ph.licence }}</a>, via <a href="{{ ph.page }}">Wikimedia Commons</a></small></figcaption>
+      </figure>
+      {% endfor %}
+    </div>
   </div>
 </section>
 {% endblock %}

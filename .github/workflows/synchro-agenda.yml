@@ -1,7 +1,10 @@
-# Synchronise agenda.ics avec un agenda CalDAV (Nextcloud apps.education, Infomaniak, Google…).
-# Pour l'activer : Settings > Secrets and variables > Actions > onglet Variables,
-# créez la variable AGENDA_ICS_URL avec le lien d'export .ics de l'agenda partagé.
-# Tant que la variable n'existe pas, le fichier agenda.ics du dépôt reste la référence.
+# Synchronise agenda.ics avec l'agenda de l'APSAL sur l'agenda académique (Calendar 7, CalDAV).
+#
+# Mise en route (Settings > Secrets and variables > Actions) :
+#   - onglet Variables : CALDAV_URL = https://calendar7.ac-lyon.fr/dav/home/<adresse du compte>/<nom de l'agenda>/
+#   - onglet Secrets   : CALDAV_USER et CALDAV_PASSWORD (identifiants du compte qui possède l'agenda)
+# Variante sans identifiants : une variable AGENDA_ICS_URL pointant vers un export .ics public.
+# Tant qu'aucune variable n'existe, le fichier agenda.ics du dépôt reste la référence.
 name: Synchroniser l'agenda
 
 on:
@@ -15,10 +18,18 @@ permissions:
 jobs:
   synchro:
     runs-on: ubuntu-latest
-    if: ${{ vars.AGENDA_ICS_URL != '' }}
+    if: ${{ vars.CALDAV_URL != '' || vars.AGENDA_ICS_URL != '' }}
     steps:
       - uses: actions/checkout@v4
-      - name: Télécharger l'agenda
+      - name: Lire l'agenda académique (CalDAV)
+        if: ${{ vars.CALDAV_URL != '' }}
+        env:
+          CALDAV_URL: ${{ vars.CALDAV_URL }}
+          CALDAV_USER: ${{ secrets.CALDAV_USER }}
+          CALDAV_PASSWORD: ${{ secrets.CALDAV_PASSWORD }}
+        run: python3 _src/synchro_caldav.py
+      - name: Lire un export .ics public
+        if: ${{ vars.CALDAV_URL == '' && vars.AGENDA_ICS_URL != '' }}
         env:
           URL: ${{ vars.AGENDA_ICS_URL }}
         run: |
@@ -31,5 +42,5 @@ jobs:
           git config user.name "apsal-agenda"
           git config user.email "apsal-agenda@users.noreply.github.com"
           git add agenda.ics
-          git commit -m "Agenda : synchronisation CalDAV"
+          git commit -m "Agenda : synchronisation avec l'agenda académique"
           git push

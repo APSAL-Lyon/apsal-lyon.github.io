@@ -26,7 +26,14 @@
     var lignes = deplier(texte).split("\n"), evts = [], ev = null, profondeur = 0;
     lignes.forEach(function (l) {
       if (l === "BEGIN:VEVENT") { ev = { exdates: [] }; return; }
-      if (l === "END:VEVENT") { if (ev && ev.debut) evts.push(ev); ev = null; return; }
+      if (l === "END:VEVENT") {
+        if (ev && ev.debut && ev.classe !== "PRIVATE" && ev.classe !== "CONFIDENTIAL") {
+          if (!ev.url && ev.description) { var lien = /https?:\/\/[^\s<>"]+/.exec(ev.description); if (lien) ev.url = lien[0]; }
+          ev.categorie = categorie(ev.categorie, ev.titre);
+          evts.push(ev);
+        }
+        ev = null; return;
+      }
       if (!ev) return;
       var i = l.indexOf(":"); if (i < 0) return;
       var gauche = l.slice(0, i), valeur = l.slice(i + 1);
@@ -36,7 +43,8 @@
         case "LOCATION": ev.lieu = desechapper(valeur); break;
         case "DESCRIPTION": ev.description = desechapper(valeur); break;
         case "URL": ev.url = valeur.trim(); break;
-        case "CATEGORIES": ev.categorie = valeur.split(",")[0].trim().toLowerCase(); break;
+        case "CATEGORIES": ev.categorie = desechapper(valeur); break;
+        case "CLASS": ev.classe = valeur.trim().toUpperCase(); break;
         case "UID": ev.uid = valeur.trim(); break;
         case "RRULE": ev.rrule = valeur.trim(); break;
         case "DTSTART": var d = lireDate(valeur, params); if (d) { ev.debut = d.date; ev.journee = d.journee; } break;
@@ -45,6 +53,16 @@
       }
     });
     return evts;
+  }
+
+  /* Catégories : codes du site (rdv, sortie, noel, info, hebdo) ou libellés saisis dans Thunderbird / Convergence */
+  function categorie(brute, titre) {
+    var s = ((brute || "") + " " + (brute ? "" : titre || "")).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    if (/hebdo|chorale|danse|semaine/.test(s)) return "hebdo";
+    if (/noel/.test(s)) return "noel";
+    if (/sortie|balade|visite|musee|spectacle/.test(s)) return "sortie";
+    if (/info|limite|commande|vente|tombola|inscription/.test(s)) return "info";
+    return "rdv";
   }
 
   function memeJourCle(d) { return d.getFullYear() + "-" + d.getMonth() + "-" + d.getDate(); }

@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{% block titre %}{% endblock %}APSAL, l'amicale des personnels des services académiques de Lyon</title>
+<title>{% block titre %}{% endblock %}APSAL, Amicale des personnels des Services Académiques et Départementaux de Lyon</title>
 <meta name="description" content="{% block description %}L'APSAL réunit les personnels du rectorat et de la DSDEN du Rhône autour d'activités, de sorties et de moments conviviaux.{% endblock %}">
 <link rel="icon" type="image/png" href="/assets/img/favicon.png">
 <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
 <link rel="stylesheet" href="/assets/css/site.css">
 <link rel="alternate" type="text/calendar" title="Agenda APSAL" href="/agenda.ics">
-<meta property="og:title" content="{% block og %}APSAL, l'amicale des personnels des services académiques de Lyon{% endblock %}">
+<meta property="og:title" content="{% block og %}APSAL, Amicale des personnels des Services Académiques et Départementaux de Lyon{% endblock %}">
 <meta property="og:image" content="{{ site }}/assets/img/logo-apsal.png">
 <meta property="og:locale" content="fr_FR">
 </head>
@@ -19,11 +19,11 @@
   <div class="cadre">
     <a class="marque" href="/">
       <img src="/assets/img/logo-apsal.png" alt="APSAL, accueil" width="62" height="60">
-      <span>Amicale des Personnels des Services Académiques de Lyon</span>
+      <span>Amicale des personnels des Services Académiques et Départementaux de Lyon</span>
     </a>
     <nav class="nav" aria-label="Navigation principale">
       <ul>
-        {% for url, nom in [("/", "Accueil"), ("/actus/", "Actus"), ("/agenda/", "Agenda"), ("/association/", "L'association")] %}
+        {% for url, nom in [("/", "Accueil"), ("/actus/", "Actus"), ("/agenda/", "Agenda"), ("/espacecse/", "EspaceCSE"), ("/association/", "L'association")] %}
         <li><a href="{{ url }}"{% if chemin == url or (url != "/" and chemin.startswith(url)) %} aria-current="page"{% endif %}>{{ nom }}</a></li>
         {% endfor %}
         <li><a class="nav-adherer" href="/adherer/"{% if chemin == "/adherer/" %} aria-current="page"{% endif %}>Adhérer</a></li>
@@ -38,7 +38,7 @@
   <div class="cadre">
     <div>
       <h2>APSAL</h2>
-      <p>Amicale des Personnels des Services Académiques de Lyon. Une association gérée exclusivement par des bénévoles, au service des personnels du rectorat et de la DSDEN du Rhône.</p>
+      <p>Amicale des personnels des Services Académiques et Départementaux de Lyon. Une association gérée exclusivement par des bénévoles, au service des personnels du rectorat et de la DSDEN du Rhône.</p>
     </div>
     <div>
       <h2>Nous écrire</h2>
@@ -51,6 +51,7 @@
       <h2>Raccourcis</h2>
       <ul>
         <li><a href="/adherer/">Adhérer en ligne</a></li>
+        <li><a href="/espacecse/">Accès à l'EspaceCSE</a></li>
         <li><a href="/agenda/">Agenda des activités</a></li>
         <li><a href="/association/#benevole">Devenir bénévole</a></li>
         <li><a href="/mentions-legales/">Mentions légales</a></li>

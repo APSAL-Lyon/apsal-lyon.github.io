@@ -1,6 +1,6 @@
 # Site de l'APSAL
 
-Site de l'Amicale des Personnels des Services Académiques de Lyon, publié sur **https://apsal-lyon.github.io** (GitHub Pages, branche `main`, dossier racine).
+Site de l'Amicale des personnels des Services Académiques et Départementaux de Lyon, publié sur **https://apsal-lyon.github.io** (GitHub Pages, branche `main`, dossier racine).
 
 ## Organisation
 
@@ -14,13 +14,17 @@ Site de l'Amicale des Personnels des Services Académiques de Lyon, publié sur 
 
 Après toute modification de `_src/`, régénérer les pages : `python3 _src/build.py` (dépendances : `jinja2`, `markdown`, `pyyaml`).
 
-## Agenda et CalDAV
+## Agenda et agenda académique (Calendar 7)
 
-`agenda.ics` est la source de l'agenda. Les visiteurs peuvent s'y abonner (`webcal://apsal-lyon.github.io/agenda.ics`).
+`agenda.ics` est la source de l'agenda du site. Les visiteurs peuvent s'y abonner (`webcal://apsal-lyon.github.io/agenda.ics`).
 
-Pour gérer l'agenda depuis un agenda CalDAV partagé :
-1. importez `agenda.ics` dans l'agenda CalDAV (pour repartir des dates existantes) ;
-2. copiez son lien d'export public au format .ics ;
-3. dans GitHub : *Settings > Secrets and variables > Actions > Variables*, créez `AGENDA_ICS_URL` avec ce lien.
+Pour gérer l'agenda depuis l'agenda académique (Thunderbird ou webmail Convergence) :
+1. Dans le webmail (https://webmail.ac-lyon.fr), sur le compte APSAL, créez un agenda dédié, par exemple `site` (manuel DSI, § 8).
+2. Importez-y le fichier `agenda.ics` actuel pour repartir des dates existantes.
+3. Dans GitHub, *Settings > Secrets and variables > Actions* :
+   - variable `CALDAV_URL` = `https://calendar7.ac-lyon.fr/dav/home/apsal@ac-lyon.fr/site/` ;
+   - secrets `CALDAV_USER` et `CALDAV_PASSWORD` = identifiant et mot de passe du compte.
+4. Lancez l'action « Synchroniser l'agenda » une première fois (onglet *Actions*), puis elle tourne toutes les heures.
 
-L'action « Synchroniser l'agenda » récupère alors l'agenda toutes les heures et met le site à jour. Catégories reconnues (`CATEGORIES`) : `rdv`, `sortie`, `noel`, `info`, `hebdo`.
+Seuls les événements publics sont publiés : les événements privés ou confidentiels sont ignorés, et les participants, organisateurs et rappels sont retirés.
+Catégories reconnues (champ « Catégorie ») : Sortie, Noël, Info (dates limites, ventes), Hebdo, sinon Rendez-vous. Un lien collé dans la description devient le lien de l'événement.

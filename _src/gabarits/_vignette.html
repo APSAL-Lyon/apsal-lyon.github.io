@@ -1,6 +1,6 @@
 <a class="actu" href="{{ a.url }}" data-fin="{{ a.fin_iso }}">
   <div class="vignette">
-    {% if a.image %}<img src="{{ a.image }}" alt="" loading="lazy">{% else %}{{ a.couverture|safe }}{% endif %}
+    {% if a.image %}<img src="{{ a.image }}" alt="" loading="lazy"{% if a.photo %} class="photo"{% endif %}>{% else %}{{ a.couverture|safe }}{% endif %}
   </div>
   <time datetime="{{ a.date }}">{{ a.date_fr }}<span class="etiquette etat" hidden>Terminé</span></time>
   <h3>{{ a.titre }}</h3>

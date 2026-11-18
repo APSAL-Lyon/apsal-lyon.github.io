@@ -1,5 +1,19 @@
 {% extends "base.html" %}
 {% block contenu %}
+<section class="defile" aria-labelledby="titre-defile">
+  <div class="defile-cadre">
+    <h2 id="titre-defile" class="defile-titre">À la une</h2>
+    <div class="defile-piste" id="defile">
+      <ul class="defile-liste">
+        {% for a in bandeau %}<li><a href="{{ a.url }}"><time datetime="{{ a.date }}">{{ a.date.day }}/{{ "%02d"|format(a.date.month) }}</time> {{ a.titre }}</a></li>{% endfor %}
+      </ul>
+      <ul class="defile-liste" aria-hidden="true">
+        {% for a in bandeau %}<li><a href="{{ a.url }}" tabindex="-1"><time datetime="{{ a.date }}">{{ a.date.day }}/{{ "%02d"|format(a.date.month) }}</time> {{ a.titre }}</a></li>{% endfor %}
+      </ul>
+    </div>
+    <button type="button" class="defile-pause" id="defile-pause" aria-pressed="false">Pause</button>
+  </div>
+</section>
 <section class="une">
   <div class="cadre">
     <div>
@@ -47,7 +61,7 @@
   <div class="cadre">
     <h2>Ce que l'APSAL vous propose</h2>
     <div class="offre">
-      <div>{{ icone("billet")|safe }}<div><h3>Billetterie à prix réduits</h3><p>Cinéma, spectacles, concerts, parcs et voyages via la plateforme EspaceCSE, et des billets UGC à 6,50 €.</p></div></div>
+      <div>{{ icone("billet")|safe }}<div><h3><a href="/espacecse/">Billetterie à prix réduits</a></h3><p>Cinéma, spectacles, concerts, parcs et voyages via la plateforme EspaceCSE, et des billets UGC à 6,50 €.</p></div></div>
       <div>{{ icone("cadeau")|safe }}<div><h3>Commandes groupées</h3><p>Chocolats, biscuits Bijou, parfums et autres produits à tarifs négociés, tout au long de l'année.</p></div></div>
       <div>{{ icone("balade")|safe }}<div><h3>Balades urbaines</h3><p>Des visites guidées de Lyon le samedi matin : Canuts, Confluence, Brotteaux, Chartreux…</p></div></div>
       <div>{{ icone("notes")|safe }}<div><h3>Chorale et danse</h3><p>Deux rendez-vous hebdomadaires sur la pause de midi, pour souffler et partager.</p></div></div>
@@ -77,4 +91,15 @@
   </div>
 </section>
 {% endblock %}
-{% block scripts %}<script src="/assets/js/agenda.js" defer></script>{% endblock %}
+{% block scripts %}<script src="/assets/js/agenda.js" defer></script>
+<script>
+(function () {
+  var piste = document.getElementById("defile"), bouton = document.getElementById("defile-pause");
+  if (!piste || !bouton) return;
+  bouton.addEventListener("click", function () {
+    var enPause = piste.classList.toggle("arrete");
+    bouton.setAttribute("aria-pressed", enPause ? "true" : "false");
+    bouton.textContent = enPause ? "Lecture" : "Pause";
+  });
+})();
+</script>{% endblock %}

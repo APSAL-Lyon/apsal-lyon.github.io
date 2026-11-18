@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block titre %}EspaceCSE – {% endblock %}
+{% block description %}La billetterie à tarifs préférentiels de l'APSAL : cinéma, spectacles, parcs de loisirs, voyages. Accès réservé aux adhérents.{% endblock %}
+{% block contenu %}
+<section class="page-titre">
+  <div class="cadre">
+    <h1>EspaceCSE, votre billetterie à prix réduits</h1>
+    <p class="chapo">Grâce à l'APSAL, les adhérents profitent toute l'année de tarifs préférentiels sur les loisirs, les sorties et les voyages.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="cadre deux-colonnes">
+    <div>
+      <h2>Ce que vous y trouvez</h2>
+      <ul class="offre-cse">
+        <li>{{ icone("billet")|safe }}<span><strong>Cinéma</strong>, spectacles, concerts, théâtre, opéra, cirque et festivals</span></li>
+        <li>{{ icone("etoile")|safe }}<span><strong>Parcs de loisirs</strong> et sorties en famille</span></li>
+        <li>{{ icone("balade")|safe }}<span><strong>Voyages et séjours</strong></span></li>
+        <li>{{ icone("cadeau")|safe }}<span><strong>Bons cadeaux</strong></span></li>
+      </ul>
+      <p>La participation financière de l'APSAL est <strong>déduite directement au moment de l'achat</strong>, dans la limite des conditions fixées par la plateforme.</p>
+
+      <h2 style="margin-top:2.2rem">Comment y accéder</h2>
+      <ol class="etapes">
+        <li><strong>Adhérez à l'APSAL.</strong> L'accès à EspaceCSE est réservé aux adhérents.</li>
+        <li><strong>Recevez vos identifiants.</strong> Un identifiant et un mot de passe vous sont transmis par courriel après la validation de votre adhésion.</li>
+        <li><strong>Connectez-vous</strong> avec le bouton ci-contre et profitez des offres.</li>
+      </ol>
+      <p>Identifiants perdus ou pas encore reçus ? Écrivez à <a href="mailto:apsal@ac-lyon.fr?subject=Identifiants%20EspaceCSE">apsal@ac-lyon.fr</a>.</p>
+
+      <h2 style="margin-top:2.2rem">Et les billets UGC ?</h2>
+      <p>Les billets de cinéma UGC restent disponibles <strong>au format papier, au tarif de 6,50 €</strong>, grâce à la participation de l'APSAL. Demandez-les aux membres du bureau.</p>
+    </div>
+    <aside class="acces-cse">
+      <p class="acces-titre">Déjà adhérent ?</p>
+      <a class="bouton-geant" href="https://offres.espacece.fr/login" rel="noopener">Accès à l'EspaceCSE</a>
+      <p>Munissez-vous de l'identifiant et du mot de passe reçus lors de votre adhésion.</p>
+      <hr>
+      <p class="acces-titre">Pas encore adhérent ?</p>
+      <a class="bouton bouton-encre" href="/adherer/">Adhérer pour 19 €</a>
+    </aside>
+  </div>
+</section>
+{% endblock %}

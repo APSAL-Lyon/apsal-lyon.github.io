@@ -17,7 +17,12 @@
       {{ a.html|safe }}
     </article>
     <aside class="encart" aria-label="En pratique">
-      {% if a.image %}<a href="{{ a.image }}"><img src="{{ a.image }}" alt="{{ a.image_alt }}"></a>{% endif %}
+      {% if a.photo %}
+      <figure class="photo-creditee">
+        <img src="{{ a.image }}" alt="{{ a.image_alt }}">
+        <figcaption>Photo : {{ a.photo.auteur }}, <a href="{{ a.photo.licence_url }}">{{ a.photo.licence }}</a>, via <a href="{{ a.photo.page }}">Wikimedia Commons</a></figcaption>
+      </figure>
+      {% elif a.image %}<a href="{{ a.image }}"><img src="{{ a.image }}" alt="{{ a.image_alt }}"></a>{% endif %}
       {% if a.infos %}
       <dl>
         {% for k, v in a.infos.items() %}<dt>{{ k }}</dt><dd>{{ v }}</dd>{% endfor %}
