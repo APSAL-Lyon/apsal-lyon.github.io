@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block titre %}Actus – {% endblock %}
+{% block contenu %}
+<section class="page-titre">
+  <div class="cadre">
+    <h1>Les actus de l'APSAL</h1>
+    <p class="chapo">Activités, sorties, commandes groupées et vie de l'association.</p>
+  </div>
+</section>
+<section class="section">
+  <div class="cadre actus">
+    {% for a in actus %}{% include "_vignette.html" %}{% endfor %}
+  </div>
+</section>
+{% endblock %}

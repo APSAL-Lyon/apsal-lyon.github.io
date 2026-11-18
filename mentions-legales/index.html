@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mentions légales – APSAL, l'amicale des personnels des services académiques de Lyon</title>
+<meta name="description" content="L'APSAL réunit les personnels du rectorat et de la DSDEN du Rhône autour d'activités, de sorties et de moments conviviaux.">
+<link rel="icon" type="image/png" href="/assets/img/favicon.png">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<link rel="stylesheet" href="/assets/css/site.css">
+<link rel="alternate" type="text/calendar" title="Agenda APSAL" href="/agenda.ics">
+<meta property="og:title" content="APSAL, l'amicale des personnels des services académiques de Lyon">
+<meta property="og:image" content="https://apsal-lyon.github.io/assets/img/logo-apsal.png">
+<meta property="og:locale" content="fr_FR">
+</head>
+<body>
+<a class="lien-evitement" href="#contenu">Aller au contenu</a>
+<header class="entete">
+  <div class="cadre">
+    <a class="marque" href="/">
+      <img src="/assets/img/logo-apsal.png" alt="APSAL, accueil" width="62" height="60">
+      <span>Amicale des Personnels des Services Académiques de Lyon</span>
+    </a>
+    <nav class="nav" aria-label="Navigation principale">
+      <ul>
+        <li><a href="/">Accueil</a></li>
+        <li><a href="/actus/">Actus</a></li>
+        <li><a href="/agenda/">Agenda</a></li>
+        <li><a href="/association/">L&#39;association</a></li>
+        <li><a class="nav-adherer" href="/adherer/">Adhérer</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main id="contenu">
+<section class="page-titre"><div class="cadre"><h1>Mentions légales</h1></div></section>
+<section class="section"><div class="cadre corps" style="max-width:var(--mesure)">
+  <h2>Éditeur</h2>
+  <p>APSAL, Amicale des Personnels des Services Académiques de Lyon, association loi 1901.<br>Rectorat de Lyon, 92 rue de Marseille, 69007 Lyon.<br>Contact : <a href="mailto:apsal@ac-lyon.fr">apsal@ac-lyon.fr</a></p>
+  <p>Directeur de la publication : le président de l'association.</p>
+  <h2>Hébergement</h2>
+  <p>GitHub Pages, service de GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis.</p>
+  <h2>Données personnelles</h2>
+  <p>Ce site ne dépose aucun cookie de mesure d'audience. Le formulaire d'adhésion est fourni par Tally (Tally BV, Belgique) : les informations saisies servent uniquement à la gestion des adhésions par l'APSAL et ne sont pas transmises à des tiers. Vous pouvez demander leur consultation, leur rectification ou leur suppression à <a href="mailto:apsal@ac-lyon.fr">apsal@ac-lyon.fr</a>.</p>
+  <h2>Crédits</h2>
+  <p>Logo, affiches et textes : APSAL. Polices Bricolage Grotesque et Figtree, sous licence SIL Open Font License.</p>
+</div></section>
+</main>
+<footer class="pied">
+  <div class="cadre">
+    <div>
+      <h2>APSAL</h2>
+      <p>Amicale des Personnels des Services Académiques de Lyon. Une association gérée exclusivement par des bénévoles, au service des personnels du rectorat et de la DSDEN du Rhône.</p>
+    </div>
+    <div>
+      <h2>Nous écrire</h2>
+      <ul>
+        <li><a href="mailto:apsal@ac-lyon.fr">apsal@ac-lyon.fr</a></li>
+        <li>Rectorat de Lyon<br>92 rue de Marseille, 69007 Lyon</li>
+      </ul>
+    </div>
+    <div>
+      <h2>Raccourcis</h2>
+      <ul>
+        <li><a href="/adherer/">Adhérer en ligne</a></li>
+        <li><a href="/agenda/">Agenda des activités</a></li>
+        <li><a href="/association/#benevole">Devenir bénévole</a></li>
+        <li><a href="/mentions-legales/">Mentions légales</a></li>
+      </ul>
+    </div>
+    <div class="bas">
+      <span>© 2026 APSAL</span>
+      <span>Site réalisé et tenu à jour par les bénévoles de l'association</span>
+    </div>
+  </div>
+</footer>
+<script>
+/* Signale les actus dont l'événement est passé */
+(function () {
+  var auj = new Date(); auj.setHours(0, 0, 0, 0);
+  document.querySelectorAll("[data-fin]").forEach(function (n) {
+    var f = n.getAttribute("data-fin"); if (!f) return;
+    var p = f.split("-"), fin = new Date(+p[0], +p[1] - 1, +p[2]);
+    if (fin < auj) { n.classList.add("passee"); var e = n.querySelector(".etat"); if (e) e.hidden = false; }
+  });
+})();
+</script>
+</body>
+</html>

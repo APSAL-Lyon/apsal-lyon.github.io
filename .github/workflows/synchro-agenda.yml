@@ -1,0 +1,35 @@
+# Synchronise agenda.ics avec un agenda CalDAV (Nextcloud apps.education, Infomaniak, Google…).
+# Pour l'activer : Settings > Secrets and variables > Actions > onglet Variables,
+# créez la variable AGENDA_ICS_URL avec le lien d'export .ics de l'agenda partagé.
+# Tant que la variable n'existe pas, le fichier agenda.ics du dépôt reste la référence.
+name: Synchroniser l'agenda
+
+on:
+  schedule:
+    - cron: "17 * * * *"   # toutes les heures
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  synchro:
+    runs-on: ubuntu-latest
+    if: ${{ vars.AGENDA_ICS_URL != '' }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Télécharger l'agenda
+        env:
+          URL: ${{ vars.AGENDA_ICS_URL }}
+        run: |
+          curl -fsSL --retry 3 "$URL" -o agenda.nouveau.ics
+          grep -q "BEGIN:VCALENDAR" agenda.nouveau.ics || { echo "Le fichier reçu n'est pas un agenda .ics"; exit 1; }
+          mv agenda.nouveau.ics agenda.ics
+      - name: Publier si l'agenda a changé
+        run: |
+          if git diff --quiet agenda.ics; then echo "Agenda inchangé"; exit 0; fi
+          git config user.name "apsal-agenda"
+          git config user.email "apsal-agenda@users.noreply.github.com"
+          git add agenda.ics
+          git commit -m "Agenda : synchronisation CalDAV"
+          git push

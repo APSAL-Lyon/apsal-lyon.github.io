@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block titre %}{{ a.titre }} – {% endblock %}
+{% block description %}{{ a.resume }}{% endblock %}
+{% block og %}{{ a.titre }}{% endblock %}
+{% block contenu %}
+<section class="page-titre">
+  <div class="cadre">
+    <p class="fil"><a href="/actus/">Actus</a></p>
+    <h1>{{ a.titre }}</h1>
+    <p class="chapo">{{ a.resume }}</p>
+  </div>
+</section>
+<section class="section">
+  <div class="cadre article">
+    <article class="corps" data-fin="{{ a.fin_iso }}">
+      <p><time datetime="{{ a.date }}">Publié le {{ a.date_fr }}</time> <span class="etiquette etat" hidden>Événement terminé</span></p>
+      {{ a.html|safe }}
+    </article>
+    <aside class="encart" aria-label="En pratique">
+      {% if a.image %}<a href="{{ a.image }}"><img src="{{ a.image }}" alt="{{ a.image_alt }}"></a>{% endif %}
+      {% if a.infos %}
+      <dl>
+        {% for k, v in a.infos.items() %}<dt>{{ k }}</dt><dd>{{ v }}</dd>{% endfor %}
+      </dl>
+      {% endif %}
+      {% if a.bouton %}<a class="bouton bouton-soleil" href="{{ a.bouton[1] }}">{{ a.bouton[0] }}</a>{% endif %}
+      {% if a.fin %}<a class="bouton bouton-contour" href="/agenda/">Voir dans l'agenda</a>{% endif %}
+    </aside>
+  </div>
+</section>
+{% endblock %}

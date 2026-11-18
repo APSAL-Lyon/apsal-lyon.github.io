@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block titre %}Agenda – {% endblock %}
+{% block contenu %}
+<section class="page-titre">
+  <div class="cadre">
+    <h1>L'agenda de l'APSAL</h1>
+    <p class="chapo">Toutes les activités, sorties et dates limites. Abonnez-vous pour les retrouver dans votre propre agenda.</p>
+  </div>
+</section>
+<section class="section" id="calendrier">
+  <div class="cadre">
+    <div class="agenda-outils">
+      <h2 class="mois" id="mois-courant" aria-live="polite">Agenda</h2>
+      <div class="nav-mois">
+        <button type="button" id="mois-prec" aria-label="Mois précédent">Précédent</button>
+        <button type="button" id="mois-auj">Aujourd'hui</button>
+        <button type="button" id="mois-suiv" aria-label="Mois suivant">Suivant</button>
+      </div>
+    </div>
+    <div class="grille" id="grille" aria-hidden="true"></div>
+    <p class="legende"><span class="l-rdv">Rendez-vous</span><span class="l-sortie">Sorties et Noël</span><span class="l-info">Dates limites et ventes</span><span class="l-hebdo">Activités hebdomadaires</span></p>
+
+    <h2 style="margin-top:2.5rem">Ce mois-ci</h2>
+    <p class="vide" style="color:var(--gris)">Hors chorale (le lundi) et danse en ligne (le jeudi), qui ont lieu chaque semaine.</p>
+    <ul class="rdv" id="liste-mois" aria-live="polite"><li><span class="vide">Chargement de l'agenda…</span></li></ul>
+    <noscript><p>Le calendrier a besoin de JavaScript. Vous pouvez télécharger le fichier <a href="/agenda.ics">agenda.ics</a>.</p></noscript>
+
+    <div class="abonnement">
+      <div>
+        <h2>Ajoutez l'agenda à votre téléphone</h2>
+        <p>Abonnez-vous une fois : les nouvelles dates apparaîtront toutes seules dans votre agenda (Outlook, Google Agenda, iPhone, Thunderbird…).</p>
+      </div>
+      <div class="actions">
+        <a class="bouton bouton-encre" href="webcal://apsal-lyon.github.io/agenda.ics">S'abonner</a>
+        <a class="bouton bouton-contour" href="/agenda.ics" download>Télécharger le fichier .ics</a>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
+{% block scripts %}<script src="/assets/js/agenda.js" defer></script>{% endblock %}

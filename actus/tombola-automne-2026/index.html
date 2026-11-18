@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tombola d&#39;automne, à vos tickets ! – APSAL, l'amicale des personnels des services académiques de Lyon</title>
+<meta name="description" content="Vente des tickets du 2 au 24 novembre, tirage au sort le jeudi 26 novembre. 1 € le ticket, 3 € les 5.">
+<link rel="icon" type="image/png" href="/assets/img/favicon.png">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<link rel="stylesheet" href="/assets/css/site.css">
+<link rel="alternate" type="text/calendar" title="Agenda APSAL" href="/agenda.ics">
+<meta property="og:title" content="Tombola d&#39;automne, à vos tickets !">
+<meta property="og:image" content="https://apsal-lyon.github.io/assets/img/logo-apsal.png">
+<meta property="og:locale" content="fr_FR">
+</head>
+<body>
+<a class="lien-evitement" href="#contenu">Aller au contenu</a>
+<header class="entete">
+  <div class="cadre">
+    <a class="marque" href="/">
+      <img src="/assets/img/logo-apsal.png" alt="APSAL, accueil" width="62" height="60">
+      <span>Amicale des Personnels des Services Académiques de Lyon</span>
+    </a>
+    <nav class="nav" aria-label="Navigation principale">
+      <ul>
+        <li><a href="/">Accueil</a></li>
+        <li><a href="/actus/" aria-current="page">Actus</a></li>
+        <li><a href="/agenda/">Agenda</a></li>
+        <li><a href="/association/">L&#39;association</a></li>
+        <li><a class="nav-adherer" href="/adherer/">Adhérer</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main id="contenu">
+<section class="page-titre">
+  <div class="cadre">
+    <p class="fil"><a href="/actus/">Actus</a></p>
+    <h1>Tombola d&#39;automne, à vos tickets !</h1>
+    <p class="chapo">Vente des tickets du 2 au 24 novembre, tirage au sort le jeudi 26 novembre. 1 € le ticket, 3 € les 5.</p>
+  </div>
+</section>
+<section class="section">
+  <div class="cadre article">
+    <article class="corps" data-fin="2026-11-26">
+      <p><time datetime="2026-10-30">Publié le 30 octobre 2026</time> <span class="etiquette etat" hidden>Événement terminé</span></p>
+      <p>La <strong>tombola d'automne 2026</strong> est lancée ! Un rendez-vous placé sous le signe de la convivialité et de la solidarité : chaque ticket est une chance de gagner, et une contribution aux actions de l'association pour ses adhérents.</p>
+<h2>Où acheter vos tickets</h2>
+<ul>
+<li><strong>Site Hénon</strong> : auprès de Sabri Jemour, à la DEC.</li>
+<li><strong>Rue de Marseille et DSDEN 69</strong> : permanences de vente les lundis, mardis, mercredis et jeudis.</li>
+</ul>
+<h2>Les lots</h2>
+<p>De nombreux lots sont mis en jeu. Des lots de consolation récompensent aussi celles et ceux qui ont acheté le plus de tickets.</p>
+<p>Les noms des gagnants seront dévoilés lors du tirage au sort, le <strong>jeudi 26 novembre</strong>. Faites circuler l'information autour de vous !</p>
+    </article>
+    <aside class="encart" aria-label="En pratique">
+      <dl>
+<dt>Vente</dt><dd>Du lundi 2 au mardi 24 novembre 2026</dd><dt>Tirage</dt><dd>Jeudi 26 novembre 2026</dd><dt>Prix</dt><dd>1 € le ticket, 3 € les 5 tickets</dd><dt>Pour qui</dt><dd>Adhérents et non-adhérents</dd>      </dl>
+<a class="bouton bouton-contour" href="/agenda/">Voir dans l'agenda</a>    </aside>
+  </div>
+</section>
+</main>
+<footer class="pied">
+  <div class="cadre">
+    <div>
+      <h2>APSAL</h2>
+      <p>Amicale des Personnels des Services Académiques de Lyon. Une association gérée exclusivement par des bénévoles, au service des personnels du rectorat et de la DSDEN du Rhône.</p>
+    </div>
+    <div>
+      <h2>Nous écrire</h2>
+      <ul>
+        <li><a href="mailto:apsal@ac-lyon.fr">apsal@ac-lyon.fr</a></li>
+        <li>Rectorat de Lyon<br>92 rue de Marseille, 69007 Lyon</li>
+      </ul>
+    </div>
+    <div>
+      <h2>Raccourcis</h2>
+      <ul>
+        <li><a href="/adherer/">Adhérer en ligne</a></li>
+        <li><a href="/agenda/">Agenda des activités</a></li>
+        <li><a href="/association/#benevole">Devenir bénévole</a></li>
+        <li><a href="/mentions-legales/">Mentions légales</a></li>
+      </ul>
+    </div>
+    <div class="bas">
+      <span>© 2026 APSAL</span>
+      <span>Site réalisé et tenu à jour par les bénévoles de l'association</span>
+    </div>
+  </div>
+</footer>
+<script>
+/* Signale les actus dont l'événement est passé */
+(function () {
+  var auj = new Date(); auj.setHours(0, 0, 0, 0);
+  document.querySelectorAll("[data-fin]").forEach(function (n) {
+    var f = n.getAttribute("data-fin"); if (!f) return;
+    var p = f.split("-"), fin = new Date(+p[0], +p[1] - 1, +p[2]);
+    if (fin < auj) { n.classList.add("passee"); var e = n.querySelector(".etat"); if (e) e.hidden = false; }
+  });
+})();
+</script>
+</body>
+</html>

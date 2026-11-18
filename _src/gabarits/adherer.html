@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block titre %}Adhérer – {% endblock %}
+{% block description %}Adhérez à l'APSAL pour 2026-2027 : cotisation à partir de 19 €, formulaire en ligne.{% endblock %}
+{% block contenu %}
+<section class="page-titre">
+  <div class="cadre">
+    <h1>Adhérer à l'APSAL pour 2026-2027</h1>
+    <p class="chapo">Remplissez le formulaire ci-dessous, puis réglez votre cotisation par virement, chèque ou en espèces. Votre adhésion est validée à réception du règlement.</p>
+  </div>
+</section>
+<section class="section">
+  <div class="cadre article">
+    <div class="tally">
+      <iframe src="https://tally.so/embed/{{ tally_id }}?alignLeft=1&amp;hideTitle=1&amp;transparentBackground=1&amp;dynamicHeight=1" loading="lazy" width="100%" height="1400" frameborder="0" marginheight="0" marginwidth="0" title="Formulaire d'adhésion APSAL 2026-2027"></iframe>
+      <p><a href="https://tally.so/r/{{ tally_id }}">Ouvrir le formulaire dans une nouvelle page</a></p>
+    </div>
+    <aside class="encart" aria-labelledby="titre-formules">
+      <h2 id="titre-formules" style="font-size:1.3rem">Les formules</h2>
+      <table class="formules">
+        <thead><tr><th scope="col">Formule</th><th scope="col">Montant</th></tr></thead>
+        <tbody>
+          <tr><td>Cotisation seule</td><td>19 €</td></tr>
+          <tr><td>Avec cadeaux de Noël pour 1 enfant</td><td>29 €</td></tr>
+          <tr><td>Pour 2 enfants</td><td>34 €</td></tr>
+          <tr><td>Pour 3 enfants</td><td>39 €</td></tr>
+          <tr><td>Pour 4 enfants</td><td>44 €</td></tr>
+        </tbody>
+      </table>
+      <p style="font-size:1rem">Les cadeaux de Noël concernent les enfants et petits-enfants nés entre le 1er janvier 2015 et le 31 octobre 2026. Le choix se fait parmi les références A à F du <a href="https://tinyurl.com/apsal2026">catalogue jouets</a>.</p>
+      <p class="note">Date limite de l'adhésion avec cadeaux de Noël : <strong>lundi 2 novembre 2026</strong>. Pour une adhésion en cours d'année, écrivez à <a href="mailto:apsal@ac-lyon.fr">apsal@ac-lyon.fr</a>.</p>
+    </aside>
+  </div>
+</section>
+{% endblock %}
+{% block scripts %}<script src="https://tally.so/widgets/embed.js" async></script>{% endblock %}

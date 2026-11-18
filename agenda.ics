@@ -1,0 +1,146 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//APSAL Lyon//Agenda//FR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Agenda APSAL
+X-WR-TIMEZONE:Europe/Paris
+BEGIN:VTIMEZONE
+TZID:Europe/Paris
+BEGIN:DAYLIGHT
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0200
+TZNAME:CEST
+DTSTART:19700329T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0100
+TZNAME:CET
+DTSTART:19701025T030000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:aperitif-rentree-2026@apsal-lyon.github.io
+DTSTAMP:20261118T090000Z
+DTSTART;TZID=Europe/Paris:20260922T120000
+DTEND;TZID=Europe/Paris:20260922T133000
+SUMMARY:Apéritif de rentrée de l'APSAL
+LOCATION:Salle Pasteur\, rectorat\, 92 rue de Marseille
+DESCRIPTION:Découvrir l'association\, ses activités et ses bénévoles.
+  Présentation de la chorale et de la danse en ligne.
+CATEGORIES:rdv
+URL:https://apsal-lyon.github.io/actus/circulaire-2026-2027/
+END:VEVENT
+BEGIN:VEVENT
+UID:danse-en-ligne-2026@apsal-lyon.github.io
+DTSTAMP:20261118T090000Z
+DTSTART;TZID=Europe/Paris:20260924T120000
+DTEND;TZID=Europe/Paris:20260924T133000
+RRULE:FREQ=WEEKLY;BYDAY=TH;UNTIL=20270701T215959Z
+SUMMARY:Danse en ligne
+LOCATION:Rectorat\, rue de Marseille
+DESCRIPTION:Chaque jeudi pendant la pause méridienne\, avec Annie Portie
+ r. Réservé aux adhérents\, sur inscription. L'horaire précis est com
+ muniqué aux inscrits.
+CATEGORIES:hebdo
+URL:https://apsal-lyon.github.io/actus/danse-en-ligne/
+END:VEVENT
+BEGIN:VEVENT
+UID:chorale-2026@apsal-lyon.github.io
+DTSTAMP:20261118T090000Z
+DTSTART;TZID=Europe/Paris:20261005T123000
+DTEND;TZID=Europe/Paris:20261005T133000
+RRULE:FREQ=WEEKLY;BYDAY=MO;UNTIL=20270628T215959Z
+SUMMARY:Chorale de l'APSAL
+LOCATION:Rectorat\, rue de Marseille
+DESCRIPTION:Répétitions chaque lundi de 12 h 30 à 13 h 30\, sous la di
+ rection de Jean-Pierre Fertala. Réservé aux adhérents\, sur inscripti
+ on.
+CATEGORIES:hebdo
+URL:https://apsal-lyon.github.io/actus/chorale/
+END:VEVENT
+BEGIN:VEVENT
+UID:limite-adhesion-2026@apsal-lyon.github.io
+DTSTAMP:20261118T090000Z
+DTSTART;VALUE=DATE:20261102
+DTEND;VALUE=DATE:20261103
+SUMMARY:Date limite des adhésions 2026-2027
+DESCRIPTION:Date limite de réception du bulletin d'adhésion et du règl
+ ement.
+CATEGORIES:info
+URL:https://apsal-lyon.github.io/adherer/
+END:VEVENT
+BEGIN:VEVENT
+UID:tombola-vente-2026@apsal-lyon.github.io
+DTSTAMP:20261118T090000Z
+DTSTART;VALUE=DATE:20261102
+DTEND;VALUE=DATE:20261125
+SUMMARY:Tombola d'automne : vente des tickets
+LOCATION:Site Hénon\, rue de Marseille et DSDEN 69
+DESCRIPTION:1 € le ticket\, 3 € les 5 tickets. Ouverte à tous les pe
+ rsonnels.
+CATEGORIES:info
+URL:https://apsal-lyon.github.io/actus/tombola-automne-2026/
+END:VEVENT
+BEGIN:VEVENT
+UID:balade-confluence-2026@apsal-lyon.github.io
+DTSTAMP:20261118T090000Z
+DTSTART;TZID=Europe/Paris:20261107T093000
+DTEND;TZID=Europe/Paris:20261107T113000
+SUMMARY:Balade urbaine : Musée des Confluences et quartier de La Conflue
+ nce
+LOCATION:Arrêt « Musée des Confluences »\, tramway T1
+DESCRIPTION:Promenade guidée par Hervé Darricarrère. Gratuite pour les
+  adhérents\, 5 € pour les autres.
+CATEGORIES:sortie
+URL:https://apsal-lyon.github.io/actus/balade-confluence/
+END:VEVENT
+BEGIN:VEVENT
+UID:tombola-tirage-2026@apsal-lyon.github.io
+DTSTAMP:20261118T090000Z
+DTSTART;VALUE=DATE:20261126
+DTEND;VALUE=DATE:20261127
+SUMMARY:Tombola d'automne : tirage au sort
+DESCRIPTION:Annonce des gagnants.
+CATEGORIES:rdv
+URL:https://apsal-lyon.github.io/actus/tombola-automne-2026/
+END:VEVENT
+BEGIN:VEVENT
+UID:parfums-cloture-2026@apsal-lyon.github.io
+DTSTAMP:20261118T090000Z
+DTSTART;VALUE=DATE:20261202
+DTEND;VALUE=DATE:20261203
+SUMMARY:Fin de la commande groupée parfums et cosmétiques
+DESCRIPTION:Dernier jour pour commander. Livraison au rectorat après la 
+ clôture.
+CATEGORIES:info
+URL:https://apsal-lyon.github.io/actus/commande-parfums-noel/
+END:VEVENT
+BEGIN:VEVENT
+UID:arbre-de-noel-2026@apsal-lyon.github.io
+DTSTAMP:20261118T090000Z
+DTSTART;TZID=Europe/Paris:20261212T131500
+SUMMARY:Arbre de Noël de l'APSAL
+LOCATION:Rectorat de Lyon\, 92 rue de Marseille
+DESCRIPTION:Accueil à partir de 13 h 15 : spectacle « Le Noël magique 
+ de la famille Cracottins »\, arrivée du Père Noël\, remise des cadea
+ ux et goûter.
+CATEGORIES:noel
+URL:https://apsal-lyon.github.io/actus/arbre-de-noel-2026/
+END:VEVENT
+BEGIN:VEVENT
+UID:marche-noel-talents-2026@apsal-lyon.github.io
+DTSTAMP:20261118T090000Z
+DTSTART;TZID=Europe/Paris:20261214T100000
+DTEND;TZID=Europe/Paris:20261214T150000
+SUMMARY:Marché de Noël des talents de l'académie
+LOCATION:Salles de réunion du rectorat\, 92 rue de Marseille
+DESCRIPTION:Première édition : les élèves des filières professionnel
+ les présentent et vendent leurs réalisations.
+CATEGORIES:noel
+URL:https://apsal-lyon.github.io/actus/marche-de-noel-des-talents/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% block contenu %}
+<section class="une">
+  <div class="cadre">
+    <div>
+      <h1>Chanter, danser, sortir, se retrouver.</h1>
+      <p class="chapo">L'APSAL, c'est l'amicale des personnels du rectorat et de la DSDEN du Rhône : des activités toute l'année, des sorties, des bons plans et beaucoup de convivialité.</p>
+      <div class="actions">
+        <a class="bouton bouton-soleil" href="/adherer/">Adhérer pour 19 €</a>
+        <a class="bouton bouton-clair" href="/agenda/">Voir l'agenda</a>
+      </div>
+    </div>
+    <div class="coquille">
+      {{ eventail|safe }}
+      <a class="perle" id="perle" href="/agenda/">
+        <span class="p-titre">Prochain rendez-vous</span>
+        <span class="p-mois p-jour"></span>
+        <span class="p-date">·</span>
+        <span class="p-mois"></span>
+        <span class="p-quoi">Chargement de l'agenda…</span>
+      </a>
+    </div>
+  </div>
+  <svg class="vague" viewBox="0 0 1200 48" preserveAspectRatio="none" aria-hidden="true"><path d="M0 48V22c120-22 240-22 360 0s240 22 360 0 240-22 360 0 120 11 120 11v15z" fill="currentColor"/></svg>
+</section>
+
+<section class="section">
+  <div class="cadre deux-colonnes">
+    <div>
+      <div class="titre-section"><h2>Prochains rendez-vous</h2><a href="/agenda/">Tout l'agenda</a></div>
+      <ul class="rdv" id="prochains" aria-live="polite">
+        <li><span class="vide">Chargement de l'agenda…</span></li>
+      </ul>
+      <noscript><p>Consultez l'agenda complet sur la page <a href="/agenda/">Agenda</a> ou téléchargez le fichier <a href="/agenda.ics">agenda.ics</a>.</p></noscript>
+    </div>
+    <aside class="hebdo" aria-labelledby="titre-hebdo">
+      <h2 id="titre-hebdo">Toutes les semaines</h2>
+      <ul>
+        <li><strong>Chorale</strong><span>Le lundi, de 12 h 30 à 13 h 30. <a href="/actus/chorale/">S'inscrire</a></span></li>
+        <li><strong>Danse en ligne</strong><span>Le jeudi, pendant la pause méridienne. <a href="/actus/danse-en-ligne/">S'inscrire</a></span></li>
+      </ul>
+    </aside>
+  </div>
+</section>
+
+<section class="section section-blanche">
+  <div class="cadre">
+    <h2>Ce que l'APSAL vous propose</h2>
+    <div class="offre">
+      <div>{{ icone("billet")|safe }}<div><h3>Billetterie à prix réduits</h3><p>Cinéma, spectacles, concerts, parcs et voyages via la plateforme EspaceCSE, et des billets UGC à 6,50 €.</p></div></div>
+      <div>{{ icone("cadeau")|safe }}<div><h3>Commandes groupées</h3><p>Chocolats, biscuits Bijou, parfums et autres produits à tarifs négociés, tout au long de l'année.</p></div></div>
+      <div>{{ icone("balade")|safe }}<div><h3>Balades urbaines</h3><p>Des visites guidées de Lyon le samedi matin : Canuts, Confluence, Brotteaux, Chartreux…</p></div></div>
+      <div>{{ icone("notes")|safe }}<div><h3>Chorale et danse</h3><p>Deux rendez-vous hebdomadaires sur la pause de midi, pour souffler et partager.</p></div></div>
+      <div>{{ icone("sapin")|safe }}<div><h3>Arbre de Noël</h3><p>Spectacle, Père Noël et cadeaux pour les enfants des adhérents jusqu'à 11 ans.</p></div></div>
+      <div>{{ icone("etoile")|safe }}<div><h3>Animations</h3><p>Tombolas, Chandeleur, chasse aux œufs et olympiades dans les jardins du rectorat.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="cadre">
+    <div class="titre-section"><h2>Dernières actus</h2><a href="/actus/">Toutes les actus</a></div>
+    <div class="actus">
+      {% for a in actus %}{% include "_vignette.html" %}{% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="bandeau">
+  <div class="cadre">
+    <div>
+      <h2>Rejoignez l'amicale</h2>
+      <p>L'adhésion ouvre l'accès à toutes les activités, à la billetterie EspaceCSE et à l'Arbre de Noël. Elle se fait en ligne en deux minutes.</p>
+    </div>
+    <p class="prix">19 €<small>par an, cotisation seule</small></p>
+    <a class="bouton bouton-encre" href="/adherer/">Adhérer en ligne</a>
+  </div>
+</section>
+{% endblock %}
+{% block scripts %}<script src="/assets/js/agenda.js" defer></script>{% endblock %}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Adhérer – APSAL, l'amicale des personnels des services académiques de Lyon</title>
+<meta name="description" content="Adhérez à l'APSAL pour 2026-2027 : cotisation à partir de 19 €, formulaire en ligne.">
+<link rel="icon" type="image/png" href="/assets/img/favicon.png">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<link rel="stylesheet" href="/assets/css/site.css">
+<link rel="alternate" type="text/calendar" title="Agenda APSAL" href="/agenda.ics">
+<meta property="og:title" content="APSAL, l'amicale des personnels des services académiques de Lyon">
+<meta property="og:image" content="https://apsal-lyon.github.io/assets/img/logo-apsal.png">
+<meta property="og:locale" content="fr_FR">
+</head>
+<body>
+<a class="lien-evitement" href="#contenu">Aller au contenu</a>
+<header class="entete">
+  <div class="cadre">
+    <a class="marque" href="/">
+      <img src="/assets/img/logo-apsal.png" alt="APSAL, accueil" width="62" height="60">
+      <span>Amicale des Personnels des Services Académiques de Lyon</span>
+    </a>
+    <nav class="nav" aria-label="Navigation principale">
+      <ul>
+        <li><a href="/">Accueil</a></li>
+        <li><a href="/actus/">Actus</a></li>
+        <li><a href="/agenda/">Agenda</a></li>
+        <li><a href="/association/">L&#39;association</a></li>
+        <li><a class="nav-adherer" href="/adherer/" aria-current="page">Adhérer</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main id="contenu">
+<section class="page-titre">
+  <div class="cadre">
+    <h1>Adhérer à l'APSAL pour 2026-2027</h1>
+    <p class="chapo">Remplissez le formulaire ci-dessous, puis réglez votre cotisation par virement, chèque ou en espèces. Votre adhésion est validée à réception du règlement.</p>
+  </div>
+</section>
+<section class="section">
+  <div class="cadre article">
+    <div class="tally">
+      <iframe src="https://tally.so/embed/PR9kjP?alignLeft=1&amp;hideTitle=1&amp;transparentBackground=1&amp;dynamicHeight=1" loading="lazy" width="100%" height="1400" frameborder="0" marginheight="0" marginwidth="0" title="Formulaire d'adhésion APSAL 2026-2027"></iframe>
+      <p><a href="https://tally.so/r/PR9kjP">Ouvrir le formulaire dans une nouvelle page</a></p>
+    </div>
+    <aside class="encart" aria-labelledby="titre-formules">
+      <h2 id="titre-formules" style="font-size:1.3rem">Les formules</h2>
+      <table class="formules">
+        <thead><tr><th scope="col">Formule</th><th scope="col">Montant</th></tr></thead>
+        <tbody>
+          <tr><td>Cotisation seule</td><td>19 €</td></tr>
+          <tr><td>Avec cadeaux de Noël pour 1 enfant</td><td>29 €</td></tr>
+          <tr><td>Pour 2 enfants</td><td>34 €</td></tr>
+          <tr><td>Pour 3 enfants</td><td>39 €</td></tr>
+          <tr><td>Pour 4 enfants</td><td>44 €</td></tr>
+        </tbody>
+      </table>
+      <p style="font-size:1rem">Les cadeaux de Noël concernent les enfants et petits-enfants nés entre le 1er janvier 2015 et le 31 octobre 2026. Le choix se fait parmi les références A à F du <a href="https://tinyurl.com/apsal2026">catalogue jouets</a>.</p>
+      <p class="note">Date limite de l'adhésion avec cadeaux de Noël : <strong>lundi 2 novembre 2026</strong>. Pour une adhésion en cours d'année, écrivez à <a href="mailto:apsal@ac-lyon.fr">apsal@ac-lyon.fr</a>.</p>
+    </aside>
+  </div>
+</section>
+</main>
+<footer class="pied">
+  <div class="cadre">
+    <div>
+      <h2>APSAL</h2>
+      <p>Amicale des Personnels des Services Académiques de Lyon. Une association gérée exclusivement par des bénévoles, au service des personnels du rectorat et de la DSDEN du Rhône.</p>
+    </div>
+    <div>
+      <h2>Nous écrire</h2>
+      <ul>
+        <li><a href="mailto:apsal@ac-lyon.fr">apsal@ac-lyon.fr</a></li>
+        <li>Rectorat de Lyon<br>92 rue de Marseille, 69007 Lyon</li>
+      </ul>
+    </div>
+    <div>
+      <h2>Raccourcis</h2>
+      <ul>
+        <li><a href="/adherer/">Adhérer en ligne</a></li>
+        <li><a href="/agenda/">Agenda des activités</a></li>
+        <li><a href="/association/#benevole">Devenir bénévole</a></li>
+        <li><a href="/mentions-legales/">Mentions légales</a></li>
+      </ul>
+    </div>
+    <div class="bas">
+      <span>© 2026 APSAL</span>
+      <span>Site réalisé et tenu à jour par les bénévoles de l'association</span>
+    </div>
+  </div>
+</footer>
+<script>
+/* Signale les actus dont l'événement est passé */
+(function () {
+  var auj = new Date(); auj.setHours(0, 0, 0, 0);
+  document.querySelectorAll("[data-fin]").forEach(function (n) {
+    var f = n.getAttribute("data-fin"); if (!f) return;
+    var p = f.split("-"), fin = new Date(+p[0], +p[1] - 1, +p[2]);
+    if (fin < auj) { n.classList.add("passee"); var e = n.querySelector(".etat"); if (e) e.hidden = false; }
+  });
+})();
+</script>
+<script src="https://tally.so/widgets/embed.js" async></script></body>
+</html>
