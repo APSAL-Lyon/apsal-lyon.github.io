@@ -121,7 +121,7 @@ def main():
     actus = lire_actus()
 
     pages = {
-        "index.html": ("accueil.html", dict(actus=actus[:3], bandeau=actus[:6], eventail=eventail())),
+        "index.html": ("accueil.html", dict(actus=actus[:3], une=sorted([a for a in actus if a.get("une")], key=lambda a: a["une"]), eventail=eventail())),
         "actus/index.html": ("actus.html", dict(actus=actus)),
         "agenda/index.html": ("agenda.html", {}),
         "association/index.html": ("association.html", {}),

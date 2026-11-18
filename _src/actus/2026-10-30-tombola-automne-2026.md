@@ -2,13 +2,16 @@
 titre: Tombola d'automne, à vos tickets !
 date: 2026-10-30
 fin: 2026-11-26
-motif: tombola
 resume: "Vente des tickets du 2 au 24 novembre, tirage au sort le jeudi 26 novembre. 1 € le ticket, 3 € les 5."
 infos:
   Vente: Du lundi 2 au mardi 24 novembre 2026
   Tirage: Jeudi 26 novembre 2026
   Prix: 1 € le ticket, 3 € les 5 tickets
   Pour qui: Adhérents et non-adhérents
+une: 3
+image: /assets/img/une/tombola.svg
+image_alt: "Illustration : tickets de tombola et confettis."
+une_image: /assets/img/une/tombola.svg
 ---
 La **tombola d'automne 2026** est lancée ! Un rendez-vous placé sous le signe de la convivialité et de la solidarité : chaque ticket est une chance de gagner, et une contribution aux actions de l'association pour ses adhérents.
 

@@ -10,6 +10,8 @@ infos:
   Où: Salles de réunion du rectorat, 92 rue de Marseille
   Pour qui: Les agents du rectorat et de la DSDEN du Rhône, leurs familles et amis
 bouton: [Télécharger la présentation (PDF), /assets/docs/marche-de-noel-des-talents-2026.pdf]
+une: 4
+une_image: /assets/img/une/marche-de-noel.jpg
 ---
 En accord avec l'autorité hiérarchique de l'académie, l'APSAL organise la **première édition du Marché de Noël des talents de l'académie**.
 

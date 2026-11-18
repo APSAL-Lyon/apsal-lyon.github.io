@@ -1,17 +1,31 @@
 {% extends "base.html" %}
 {% block contenu %}
-<section class="defile" aria-labelledby="titre-defile">
-  <div class="defile-cadre">
-    <h2 id="titre-defile" class="defile-titre">À la une</h2>
-    <div class="defile-piste" id="defile">
-      <ul class="defile-liste">
-        {% for a in bandeau %}<li><a href="{{ a.url }}"><time datetime="{{ a.date }}">{{ a.date.day }}/{{ "%02d"|format(a.date.month) }}</time> {{ a.titre }}</a></li>{% endfor %}
-      </ul>
-      <ul class="defile-liste" aria-hidden="true">
-        {% for a in bandeau %}<li><a href="{{ a.url }}" tabindex="-1"><time datetime="{{ a.date }}">{{ a.date.day }}/{{ "%02d"|format(a.date.month) }}</time> {{ a.titre }}</a></li>{% endfor %}
-      </ul>
+<section class="carrousel" aria-roledescription="carrousel" aria-label="Les actus à la une">
+  <div class="cadre">
+    <div class="car-piste" id="carrousel">
+      {% for a in une %}
+      <article class="car-diapo{% if loop.first %} active{% endif %}" role="group" aria-roledescription="diapositive" aria-label="{{ loop.index }} sur {{ une|length }}" data-fin="{{ a.fin_iso }}"{% if not loop.first %} hidden{% endif %}>
+        <a class="car-visuel" href="{{ a.url }}" tabindex="-1" aria-hidden="true"><img src="{{ a.une_image }}" alt="" {% if loop.first %}fetchpriority="high"{% else %}loading="lazy"{% endif %}></a>
+        <div class="car-texte">
+          <p class="car-rubrique">À la une</p>
+          <h2><a href="{{ a.url }}">{{ a.titre }}</a></h2>
+          <p>{{ a.resume }}</p>
+          <div class="car-actions">
+            <a class="bouton bouton-soleil" href="{{ a.url }}">Lire l'actu</a>
+            {% if a.bouton and not a.bouton[1].startswith("/actus/") %}<a class="bouton bouton-clair" href="{{ a.bouton[1] }}">{{ a.bouton[0] }}</a>{% endif %}
+          </div>
+        </div>
+      </article>
+      {% endfor %}
     </div>
-    <button type="button" class="defile-pause" id="defile-pause" aria-pressed="false">Pause</button>
+    <div class="car-commandes">
+      <button type="button" class="car-fleche" id="car-prec" aria-label="Actu précédente"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+      <div class="car-points" role="group" aria-label="Choisir une actu">
+        {% for a in une %}<button type="button" class="car-point" aria-label="Afficher : {{ a.titre }}"{% if loop.first %} aria-current="true"{% endif %}></button>{% endfor %}
+      </div>
+      <button type="button" class="car-fleche" id="car-suiv" aria-label="Actu suivante"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+      <button type="button" class="car-pause" id="car-pause" aria-pressed="false">Pause</button>
+    </div>
   </div>
 </section>
 <section class="une">
@@ -92,14 +106,4 @@
 </section>
 {% endblock %}
 {% block scripts %}<script src="/assets/js/agenda.js" defer></script>
-<script>
-(function () {
-  var piste = document.getElementById("defile"), bouton = document.getElementById("defile-pause");
-  if (!piste || !bouton) return;
-  bouton.addEventListener("click", function () {
-    var enPause = piste.classList.toggle("arrete");
-    bouton.setAttribute("aria-pressed", enPause ? "true" : "false");
-    bouton.textContent = enPause ? "Lecture" : "Pause";
-  });
-})();
-</script>{% endblock %}
+<script src="/assets/js/carrousel.js" defer></script>{% endblock %}

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="Tickets de tombola et confettis">
+  <rect width="800" height="500" fill="#F5C61E"/>
+  <g fill="#F8D454">
+    <path d="M400 560 L-80 120 L-80 40 Z"/><path d="M400 560 L60 -40 L170 -40 Z"/>
+    <path d="M400 560 L330 -40 L470 -40 Z"/><path d="M400 560 L630 -40 L740 -40 Z"/>
+    <path d="M400 560 L880 40 L880 120 Z"/><path d="M400 560 L880 300 L880 380 Z"/>
+    <path d="M400 560 L-80 300 L-80 380 Z"/>
+  </g>
+  <!-- confettis -->
+  <g>
+    <circle cx="90" cy="70" r="9" fill="#C9356C"/><circle cx="700" cy="90" r="11" fill="#1E7FC2"/>
+    <circle cx="160" cy="420" r="8" fill="#1E7FC2"/><circle cx="660" cy="430" r="9" fill="#C9356C"/>
+    <rect x="590" y="40" width="16" height="30" rx="4" transform="rotate(30 598 55)" fill="#17324D"/>
+    <rect x="200" y="30" width="16" height="30" rx="4" transform="rotate(-25 208 45)" fill="#1E7FC2"/>
+    <rect x="80" y="250" width="14" height="26" rx="4" transform="rotate(50 87 263)" fill="#17324D"/>
+    <rect x="720" y="250" width="14" height="26" rx="4" transform="rotate(-40 727 263)" fill="#C9356C"/>
+    <path d="M300 60 l8 18 20 2 -15 13 5 19 -18 -10 -18 10 5 -19 -15 -13 20 -2z" fill="#FFFFFF"/>
+    <path d="M540 410 l7 15 17 2 -13 11 4 16 -15 -9 -15 9 4 -16 -13 -11 17 -2z" fill="#FFFFFF"/>
+  </g>
+  <!-- tickets -->
+  <g transform="rotate(-14 270 270)">
+    <path d="M150 190 h240 v34 a22 22 0 0 0 0 44 v34 h-240 v-34 a22 22 0 0 0 0 -44z" fill="#1E7FC2" stroke="#17324D" stroke-width="5"/>
+    <line x1="320" y1="196" x2="320" y2="296" stroke="#FFFFFF" stroke-width="4" stroke-dasharray="8 8"/>
+    <text x="235" y="262" fill="#FFFFFF" font-family="Trebuchet MS, Arial, sans-serif" font-weight="800" font-size="40" text-anchor="middle">N° 112</text>
+  </g>
+  <g transform="rotate(10 520 250)">
+    <path d="M400 180 h260 v36 a24 24 0 0 0 0 48 v36 h-260 v-36 a24 24 0 0 0 0 -48z" fill="#C9356C" stroke="#17324D" stroke-width="5"/>
+    <line x1="585" y1="186" x2="585" y2="294" stroke="#FFFFFF" stroke-width="4" stroke-dasharray="8 8"/>
+    <text x="492" y="256" fill="#FFFFFF" font-family="Trebuchet MS, Arial, sans-serif" font-weight="800" font-size="44" text-anchor="middle">N° 026</text>
+  </g>
+  <g transform="rotate(-3 400 360)">
+    <path d="M260 320 h290 v40 a26 26 0 0 0 0 52 v40 h-290 v-40 a26 26 0 0 0 0 -52z" fill="#FFFFFF" stroke="#17324D" stroke-width="5"/>
+    <line x1="465" y1="327" x2="465" y2="445" stroke="#17324D" stroke-width="4" stroke-dasharray="8 8"/>
+    <text x="362" y="372" fill="#17324D" font-family="Trebuchet MS, Arial, sans-serif" font-weight="800" font-size="30" text-anchor="middle">TOMBOLA</text>
+    <text x="362" y="418" fill="#C9356C" font-family="Trebuchet MS, Arial, sans-serif" font-weight="800" font-size="40" text-anchor="middle">1 €</text>
+    <path d="M507 368 l7 15 17 2 -13 11 4 17 -15 -9 -15 9 4 -17 -13 -11 17 -2z" fill="#F5C61E" stroke="#17324D" stroke-width="3"/>
+  </g>
+</svg>

@@ -11,6 +11,8 @@ infos:
   Où: Rez-de-chaussée du rectorat, entrée principale au 92 rue de Marseille, Lyon 7e
   Pour qui: Les enfants inscrits à l'Arbre de Noël et leurs familles
 bouton: [Je ne pourrai pas venir, "mailto:apsal@ac-lyon.fr?subject=Arbre%20de%20No%C3%ABl%20%3A%20r%C3%A9cup%C3%A9ration%20du%20cadeau"]
+une: 1
+une_image: /assets/img/une/arbre-de-noel.jpg
 ---
 Comme chaque année, l'APSAL vous retrouve, vous et vos enfants, pour son traditionnel **Arbre de Noël**, le **samedi 12 décembre 2026** au rez-de-chaussée du rectorat.
 
