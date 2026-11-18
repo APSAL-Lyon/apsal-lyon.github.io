@@ -30,8 +30,8 @@ def requete(methode, url, corps=None, profondeur="1"):
 
 
 def par_report(url):
-    debut = (dt.datetime.utcnow() - dt.timedelta(days=400)).strftime("%Y%m%dT000000Z")
-    fin = (dt.datetime.utcnow() + dt.timedelta(days=800)).strftime("%Y%m%dT000000Z")
+    debut = (dt.datetime.now(dt.timezone.utc) - dt.timedelta(days=400)).strftime("%Y%m%dT000000Z")
+    fin = (dt.datetime.now(dt.timezone.utc) + dt.timedelta(days=800)).strftime("%Y%m%dT000000Z")
     corps = f"""<?xml version="1.0" encoding="utf-8"?>
 <c:calendar-query xmlns:d="DAV:" xmlns:c="urn:ietf:params:xml:ns:caldav">
   <d:prop><c:calendar-data/></d:prop>
@@ -52,6 +52,32 @@ def par_propfind(url):
             _, t = requete("GET", urllib.parse.urljoin(url, href.text), profondeur="0")
             textes.append(t)
     return textes
+
+
+def agendas_du_compte(url):
+    """Liste les agendas du compte (nom affiché -> adresse), à partir du dossier parent de CALDAV_URL."""
+    parent = url.rstrip("/").rsplit("/", 1)[0] + "/"
+    corps = ('<?xml version="1.0"?><d:propfind xmlns:d="DAV:" xmlns:c="urn:ietf:params:xml:ns:caldav">'
+             '<d:prop><d:displayname/><d:resourcetype/></d:prop></d:propfind>')
+    _, xml = requete("PROPFIND", parent, corps)
+    trouves = []
+    for rep in ET.fromstring(xml).iterfind("d:response", NS):
+        href = rep.findtext("d:href", default="", namespaces=NS)
+        if rep.find(".//d:resourcetype/c:calendar", NS) is None:
+            continue
+        nom = rep.findtext(".//d:displayname", default="", namespaces=NS) or href.rstrip("/").rsplit("/", 1)[-1]
+        trouves.append((nom, urllib.parse.urljoin(parent, href)))
+    return trouves
+
+
+def lire(url):
+    try:
+        return par_report(url)
+    except urllib.error.HTTPError as e:
+        if e.code != 404:
+            print(f"REPORT refusé ({e.code}), essai par PROPFIND")
+            return par_propfind(url)
+        raise
 
 
 def blocs(texte, nom):
@@ -80,11 +106,23 @@ def plier(ligne):
 
 def main():
     url = os.environ["CALDAV_URL"]
+    if not url.endswith("/"):
+        url += "/"
     try:
-        textes = par_report(url)
+        textes = lire(url)
     except urllib.error.HTTPError as e:
-        print(f"REPORT refusé ({e.code}), essai par PROPFIND")
-        textes = par_propfind(url)
+        if e.code != 404:
+            raise
+        # L'adresse ne correspond à aucun agenda : on cherche par nom parmi les agendas du compte.
+        cible = urllib.parse.unquote(url.rstrip("/").rsplit("/", 1)[-1]).lower()
+        agendas = agendas_du_compte(url)
+        print("Agenda introuvable à cette adresse. Agendas du compte :", ", ".join(f"« {n} »" for n, _ in agendas) or "aucun")
+        choix = [u for n, u in agendas if n.strip().lower() == cible]
+        if not choix:
+            print(f"Aucun agenda nommé « {cible} ». Corrigez la variable CALDAV_URL avec l'un des noms ci-dessus.")
+            sys.exit(1)
+        print("Agenda trouvé par son nom :", choix[0])
+        textes = lire(choix[0])
 
     fuseaux, evenements, vus = {}, [], set()
     for t in textes:
