@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 640" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="ciel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2B3F8F"/>
+      <stop offset="0.38" stop-color="#7A4BA8"/>
+      <stop offset="0.62" stop-color="#E2577A"/>
+      <stop offset="0.8" stop-color="#F48A43"/>
+      <stop offset="0.9" stop-color="#F8B640"/>
+    </linearGradient>
+    <linearGradient id="eau" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#C9567A"/>
+      <stop offset="0.35" stop-color="#5A3C86"/>
+      <stop offset="1" stop-color="#1E2A5C"/>
+    </linearGradient>
+    <radialGradient id="halo" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#FFE7A3" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#FFE7A3" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="640" fill="url(#ciel)"/>
+  <circle cx="1080" cy="470" r="260" fill="url(#halo)"/>
+  <circle cx="1080" cy="470" r="105" fill="#FFD36B"/>
+  <!-- nuages -->
+  <g fill="#FFFFFF" fill-opacity="0.12">
+    <ellipse cx="300" cy="150" rx="210" ry="26"/><ellipse cx="420" cy="180" rx="150" ry="18"/>
+    <ellipse cx="1350" cy="120" rx="190" ry="22"/><ellipse cx="900" cy="230" rx="240" ry="16"/>
+  </g>
+  <!-- collines -->
+  <path d="M0 470 C160 400 300 420 430 440 C560 460 640 380 800 400 C920 415 980 450 1080 455 C1200 460 1300 400 1440 410 C1520 416 1570 440 1600 450 L1600 500 L0 500 Z" fill="#3A2E6E"/>
+  <path d="M0 485 C200 450 360 470 520 478 C700 488 820 455 980 470 C1150 486 1320 460 1600 475 L1600 500 L0 500 Z" fill="#2A2558"/>
+  <!-- lac -->
+  <rect y="498" width="1600" height="142" fill="url(#eau)"/>
+  <g stroke="#FFD36B" stroke-linecap="round" stroke-opacity="0.75">
+    <line x1="990" y1="520" x2="1170" y2="520" stroke-width="6"/>
+    <line x1="1010" y1="545" x2="1150" y2="545" stroke-width="5"/>
+    <line x1="1030" y1="570" x2="1130" y2="570" stroke-width="4"/>
+    <line x1="1050" y1="595" x2="1110" y2="595" stroke-width="3"/>
+  </g>
+  <g stroke="#FFFFFF" stroke-opacity="0.18" stroke-linecap="round" stroke-width="3">
+    <line x1="120" y1="540" x2="260" y2="540"/><line x1="380" y1="575" x2="560" y2="575"/>
+    <line x1="1320" y1="560" x2="1480" y2="560"/><line x1="700" y1="610" x2="820" y2="610"/>
+  </g>
+</svg>

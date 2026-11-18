@@ -61,7 +61,9 @@ p { margin: 0 0 1em; }
 .entete .cadre { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; padding-block: 0.7rem; flex-wrap: wrap; }
 .marque { display: flex; align-items: center; gap: 0.8rem; text-decoration: none; color: var(--encre); }
 .marque img { width: 62px; }
-.marque span { font-family: var(--display); font-weight: 700; font-size: 1rem; line-height: 1.15; max-width: 23rem; }
+.marque-texte { display: flex; flex-direction: column; gap: 0.15rem; }
+.marque-sigle { font-family: var(--display); font-weight: 800; font-size: 2rem; line-height: 0.95; letter-spacing: 0.02em; color: var(--bleu); }
+.marque-nom { font-family: var(--display); font-weight: 500; font-size: 0.82rem; line-height: 1.2; max-width: 19rem; color: var(--encre); }
 .nav ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.25rem; }
 .nav a { display: block; padding: 0.45rem 0.85rem; border-radius: 999px; text-decoration: none; color: var(--encre); font-weight: 700; font-size: 1rem; }
 .nav a:hover { background: var(--nacre); color: var(--bleu-fonce); }
@@ -258,7 +260,8 @@ p { margin: 0 0 1em; }
   .perle .p-date { font-size: 2.4rem; }
   .perle .p-quoi { font-size: 0.85rem; }
   .actus, .offre, .frise { grid-template-columns: 1fr; }
-  .marque span { display: none; }
+  .marque-nom { display: none; }
+  .marque-sigle { font-size: 1.7rem; }
   .nav a { padding: 0.4rem 0.65rem; font-size: 0.95rem; }
   .grille .case { min-height: 4.2rem; padding: 0.2rem; }
   .agenda-outils button { padding: 0.4rem 0.75rem; font-size: 0.9rem; }
@@ -327,6 +330,9 @@ p { margin: 0 0 1em; }
 .offre h3 a:hover { text-decoration: underline; }
 
 /* ---------- EspaceCSE ---------- */
+.page-titre.cse-ciel { background: #2B3F8F url("../img/fond-cse.svg") center bottom / cover no-repeat; color: var(--blanc); padding-block: clamp(3rem, 7vw, 5.5rem) clamp(5rem, 11vw, 8.5rem); }
+.page-titre.cse-ciel h1 { color: var(--blanc); text-shadow: 0 2px 18px rgba(30, 30, 80, 0.35); }
+.page-titre.cse-ciel .chapo { color: #FFF1E0; }
 .offre-cse { list-style: none; padding: 0; margin: 0 0 1.2rem; display: grid; gap: 0.9rem; }
 .offre-cse li { display: grid; grid-template-columns: 2.6rem 1fr; gap: 0.9rem; align-items: center; }
 .offre-cse svg { width: 2.6rem; height: 2.6rem; color: var(--bleu); }
