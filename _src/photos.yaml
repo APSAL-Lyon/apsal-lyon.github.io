@@ -1,43 +1,43 @@
-# Photos libres de droits (Wikimedia Commons), affichées directement depuis Wikimedia.
+# Photos libres de droits (Wikimedia Commons), hébergées sur le site dans assets/img/photos/.
 # Auteur et licence relevés sur la page de chaque fichier le 18/11/2026.
 confluences:
   titre: Le Musée des Confluences
-  url: https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Lyon_-_Mus%C3%A9e_des_Confluences_%2849525806051%29.jpg/1280px-Lyon_-_Mus%C3%A9e_des_Confluences_%2849525806051%29.jpg
+  url: /assets/img/photos/confluences.jpg
   page: https://commons.wikimedia.org/wiki/File:Lyon_-_Mus%C3%A9e_des_Confluences_(49525806051).jpg
   auteur: Fred Romero
   licence: CC BY 2.0
   licence_url: https://creativecommons.org/licenses/by/2.0/deed.fr
 confluence-jardin:
   titre: La pointe de la Confluence, où le Rhône rejoint la Saône
-  url: https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Confluence_of_Rh%C3%B4ne_%26_Sa%C3%B4ne_rivers_%40_Jardin_du_Mus%C3%A9e_des_Confluences_%40_La_Confluence_%40_Lyon_%2836338068906%29.jpg/1280px-Confluence_of_Rh%C3%B4ne_%26_Sa%C3%B4ne_rivers_%40_Jardin_du_Mus%C3%A9e_des_Confluences_%40_La_Confluence_%40_Lyon_%2836338068906%29.jpg
+  url: /assets/img/photos/confluence-jardin.jpg
   page: https://commons.wikimedia.org/wiki/File:Confluence_of_Rh%C3%B4ne_%26_Sa%C3%B4ne_rivers_@_Jardin_du_Mus%C3%A9e_des_Confluences_@_La_Confluence_@_Lyon_(36338068906).jpg
   auteur: Guilhem Vellut
   licence: CC BY 2.0
   licence_url: https://creativecommons.org/licenses/by/2.0/deed.fr
 canuts:
   titre: Un métier à tisser de la Maison des Canuts
-  url: https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/08._Maison_des_Canuts_-_m%C3%A9tier_%C3%A0_tisser.JPG/1280px-08._Maison_des_Canuts_-_m%C3%A9tier_%C3%A0_tisser.JPG
+  url: /assets/img/photos/canuts.jpg
   page: https://commons.wikimedia.org/wiki/File:08._Maison_des_Canuts_-_m%C3%A9tier_%C3%A0_tisser.JPG
   auteur: Otourly
   licence: CC BY-SA 3.0
   licence_url: https://creativecommons.org/licenses/by-sa/3.0/deed.fr
 brotteaux:
   titre: L'ancienne gare des Brotteaux
-  url: https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/Gare_des_Brotteaux_-_septembre_2011.jpg/1280px-Gare_des_Brotteaux_-_septembre_2011.jpg
+  url: /assets/img/photos/brotteaux.jpg
   page: https://commons.wikimedia.org/wiki/File:Gare_des_Brotteaux_-_septembre_2011.jpg
   auteur: Benoît Prieur
   licence: CC0
   licence_url: https://creativecommons.org/publicdomain/zero/1.0/deed.fr
 part-dieu:
   titre: Les tours Incity, Part-Dieu (« le Crayon ») et Oxygène
-  url: https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Tours_Incity_Part_Dieu_Oxyg%C3%A8ne_Lyon_1.jpg/1280px-Tours_Incity_Part_Dieu_Oxyg%C3%A8ne_Lyon_1.jpg
+  url: /assets/img/photos/part-dieu.jpg
   page: https://commons.wikimedia.org/wiki/File:Tours_Incity_Part_Dieu_Oxyg%C3%A8ne_Lyon_1.jpg
   auteur: Chabe01
   licence: CC BY-SA 4.0
   licence_url: https://creativecommons.org/licenses/by-sa/4.0/deed.fr
 chartreux:
   titre: L'église Saint-Bruno-lès-Chartreux
-  url: https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Chapelle_Saint_Bruno_%28%C3%A9glise_Saint-Bruno-les-Chartreux%29_04.jpg/1280px-Chapelle_Saint_Bruno_%28%C3%A9glise_Saint-Bruno-les-Chartreux%29_04.jpg
+  url: /assets/img/photos/chartreux.jpg
   page: https://commons.wikimedia.org/wiki/File:Chapelle_Saint_Bruno_(%C3%A9glise_Saint-Bruno-les-Chartreux)_04.jpg
   auteur: John Samuel
   licence: CC BY-SA 4.0
